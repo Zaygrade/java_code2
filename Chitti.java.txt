@@ -1,0 +1,24 @@
+class Chitti {
+    private int magnetism;
+    private int demagnetization;
+
+    public Chitti(int magnetism) {
+        this.magnetism = magnetism;
+        this.demagnetization = 0; // Initialize demagnetization to 0
+    }
+
+    public int getMagnetism() {
+        return magnetism;
+    }
+
+    public int getDemagnetization() {
+        return demagnetization;
+    }
+
+    public void applyDemagnetization(int amount) {
+        demagnetization += amount;
+        if (demagnetization > magnetism) {
+            demagnetization = magnetism; // Cap demagnetization to magnetism
+        }
+    }
+}

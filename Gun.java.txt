@@ -1,0 +1,11 @@
+class Gun {
+    private int shotDemagnetization;
+
+    public Gun(int demagnetization) {
+        this.shotDemagnetization = demagnetization;
+    }
+
+    public int getShotDemagnetization() {
+        return shotDemagnetization;
+    }
+}

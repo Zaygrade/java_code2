@@ -1,0 +1,37 @@
+import java.util.ArrayList;
+import java.util.List;
+
+class MainChitti {
+    private List<Chitti> chittis;
+    private int giantChittiMagnetism;
+
+    public MainChitti() {
+        chittis = new ArrayList<>();
+        for (int i = 1; i <= 20; i++) {
+            chittis.add(new Chitti(i)); // Create 20 Chitti objects
+        }
+        giantChittiMagnetism = createGiantChitti();
+    }
+
+    private int createGiantChitti() {
+        int totalMagnetism = 0;
+        for (Chitti chitti : chittis) {
+            totalMagnetism += chitti.getMagnetism();
+        }
+        return totalMagnetism; // Return total magnetism for Giant_Chitti
+    }
+
+    public void applyGun(Gun gun) {
+        for (Chitti chitti : chittis) {
+            chitti.applyDemagnetization(gun.getShotDemagnetization());
+        }
+    }
+
+    public int getGiantChittiMagnetism() {
+        return giantChittiMagnetism;
+    }
+
+    public List<Chitti> getChittis() {
+        return chittis;
+    }
+}

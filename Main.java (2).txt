@@ -1,0 +1,25 @@
+public class Main {
+    public static void main(String[] args) {
+        // Step 1: Create MainChitti object
+        System.out.println("Step 1: Creating MainChitti object...");
+        MainChitti mainChitti = new MainChitti();
+        System.out.println("Giant Chitti Magnetism: " + mainChitti.getGiantChittiMagnetism() + "\n");
+
+        // Step 2: Create Gun object
+        System.out.println("Step 2: Creating Gun object with demagnetization value of 5...");
+        Gun gun = new Gun(5);
+        
+        // Step 3: Apply the gun to MainChitti
+        System.out.println("Step 3: Applying the gun to MainChitti...");
+        mainChitti.applyGun(gun);
+        System.out.println("Demagnetization applied to each Chitti:\n");
+
+        // Step 4: Show the results for each Chitti
+        System.out.println("Step 4: Displaying Chitti statuses after applying the gun:");
+        for (int i = 0; i < mainChitti.getChittis().size(); i++) {
+            Chitti chitti = mainChitti.getChittis().get(i);
+            System.out.println("Chitti " + (i + 1) + " - Magnetism: " + chitti.getMagnetism() + 
+                               ", Demagnetization: " + chitti.getDemagnetization());
+        }
+    }
+}
